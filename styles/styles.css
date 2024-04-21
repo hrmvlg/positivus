@@ -165,7 +165,7 @@ svg * {
   font-display: swap;
 }
 body {
-  font-size: clamp(18px, 1.25vm, 16px);
+  font-size: clamp(18px, 1.25vw, 16px);
   font-family: var(--font-family-base);
   font-weight: 400;
   line-height: 1.28;
@@ -191,19 +191,19 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: clamp(60px, 4.1666666667vm, 43px);
+  font-size: clamp(60px, 4.1666666667vw, 43px);
 }
 
 h2 {
-  font-size: clamp(40px, 2.7777777778vm, 36px);
+  font-size: clamp(40px, 2.7777777778vw, 36px);
 }
 
 h3 {
-  font-size: clamp(30px, 2.0833333333vm, 26px);
+  font-size: clamp(30px, 2.0833333333vw, 26px);
 }
 
 h4 {
-  font-size: clamp(20px, 1.3888888889vm, 18px);
+  font-size: clamp(20px, 1.3888888889vw, 18px);
 }
 
 .container {
