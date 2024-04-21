@@ -17,7 +17,7 @@
     border: none;
 }
 
-@mixin felx-center($IsInline: false) {
+@mixin flex-center($IsInline: false) {
     @if $IsInline {
         display: inline-flex;
     }
