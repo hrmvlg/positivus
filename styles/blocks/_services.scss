@@ -2,10 +2,9 @@
     &__list{
         &:not(:last-child){
             margin-bottom: 100px;
+            @include mobile{
+                margin-bottom: 70px;
+            }
         }
-    }
-
-    &__banner{
-        
     }
 }
