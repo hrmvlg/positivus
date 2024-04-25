@@ -279,6 +279,7 @@ h4 {
   background-color: var(--color-dark);
   border: var(--border);
   border-radius: var(--border-radius);
+  font-size: 20px;
 }
 @media (hover: hover) {
   .button:hover {
@@ -858,6 +859,11 @@ h4 {
   --bannerImageOffsetY: 20px;
   padding: var(--bannerImageOffsetY);
 }
+@media (max-width: 1023px) {
+  .banner {
+    --bannerImageOffsetY: 0;
+  }
+}
 .banner__inner {
   background-color: var(--color-gray);
   border-radius: var(--border-radius-large);
@@ -872,9 +878,25 @@ h4 {
   align-items: start;
   row-gap: 26px;
 }
+@media (max-width: 1023px) {
+  .banner__body {
+    padding: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .banner__body {
+    row-gap: 20px;
+  }
+}
 .banner__description {
   max-width: 500px;
 }
 .banner__image {
   margin-block: calc(var(--bannerImageOffsetY) * -1);
+}
+@media (max-width: 1023px) {
+  .banner__image {
+    width: 40%;
+    height: auto;
+  }
 }/*# sourceMappingURL=styles.css.map */

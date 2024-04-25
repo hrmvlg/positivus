@@ -2,6 +2,10 @@
     --bannerImageOffsetY: 20px;
     padding: var(--bannerImageOffsetY);
 
+    @include tablet {
+        --bannerImageOffsetY: 0;
+    }
+
     &__inner {
 
         background-color: var(--color-gray);
@@ -17,13 +21,26 @@
         flex-direction: column;
         align-items: start;
         row-gap: 26px;
+
+        @include tablet {
+            padding: 50px;
+        }
+
+        @include mobile{
+            row-gap: 20px;
+        }
     }
 
-    &__description{
+    &__description {
         max-width: 500px;
     }
 
     &__image {
         margin-block: calc(var(--bannerImageOffsetY) * -1);
+
+        @include tablet {
+            width: 40%;
+            height: auto;
+        }
     }
 }
