@@ -975,4 +975,89 @@ h4 {
   .case-studies__link:active {
     opacity: 0.7;
   }
+}
+
+.working-process__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  counter-reset: custom;
+  list-style: none;
+}
+.working-process__item {
+  counter-increment: custom;
+}
+.working-process__accordion {
+  --indicatorVerticalRotate: 90deg;
+  padding: 41px 60px;
+  background-color: var(--color-gray);
+  border-radius: var(--border-radius-large);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  transition-duration: var(--transition-duration);
+}
+@media (hover: hover) {
+  .working-process__accordion:hover {
+    background-color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .working-process__accordion:active {
+    background-color: var(--color-accent);
+  }
+}
+.working-process__accordion[open] {
+  background-color: var(--color-accent);
+  --indicatorVerticalRotate: 0deg;
+}
+.working-process__accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.working-process__accordion-title {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.working-process__accordion-title::before {
+  content: "0" counter(custom);
+  font-size: 2em;
+}
+.working-process__accordion-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  aspect-ratio: 1;
+  position: relative;
+  background-color: var(--color-gray);
+  border: var(--border);
+  border-radius: 50%;
+}
+.working-process__accordion-indicator::before, .working-process__accordion-indicator::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 45%;
+  height: 10%;
+  content: "";
+  background-color: var(--color-dark);
+}
+.working-process__accordion-indicator::after {
+  rotate: var(--indicatorVerticalRotate);
+  transition-duration: var(--transition-duration);
+}
+.working-process__accordion-body {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: var(--border);
 }/*# sourceMappingURL=styles.css.map */

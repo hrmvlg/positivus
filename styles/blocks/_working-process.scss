@@ -1,0 +1,84 @@
+.working-process {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        counter-reset: custom;
+        list-style: none;
+
+    }
+
+    &__item{
+        counter-increment: custom;
+
+    }
+
+    &__accordion {
+        --indicatorVerticalRotate: 90deg;
+
+        padding: 41px 60px;
+        background-color: var(--color-gray);
+        border-radius: var(--border-radius-large);
+        border: var(--border);
+        box-shadow: var(--shadow);
+        transition-duration: var(--transition-duration);
+
+        @include hover {
+            background-color: var(--color-accent);
+        }
+
+        &[open] {
+            background-color: var(--color-accent);
+            --indicatorVerticalRotate: 0deg;
+        }
+
+        &-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 50px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        &-title{
+            display: flex;
+            align-items: center;
+            column-gap: 25px;
+            &::before{
+                 content: '0' counter(custom);
+                 font-size: 2em;
+            }
+        }
+
+        &-indicator{
+            @include flex-center;
+            @include square(58px);
+            
+            position: relative;
+
+            background-color: var(--color-gray);
+            border: var(--border);
+            border-radius: 50%;
+
+            &::before, &::after{
+                @include abs-center;
+                width: 45%;
+                height: 10%;
+                content: '';
+                background-color: var(--color-dark);
+            }
+
+            &::after{
+                rotate: var(--indicatorVerticalRotate);
+                transition-duration: var(--transition-duration );
+            }
+        }
+         
+        &-body{
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: var(--border);
+        }
+    }
+}
