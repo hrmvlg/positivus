@@ -1,0 +1,46 @@
+.case-studies{
+    padding: 70px 60px;
+    border-radius: var(--border-radius-large);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
+    &__list{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    &__item{
+        --studiesItemPaddingX: 64px;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        &:not(:first-child){
+            padding-left: var(--studiesItemPaddingX);
+        }
+
+        &:not(:last-child){
+            padding-right: var(--studiesItemPaddingX);
+            border-right: 1px solid var(--color-light);
+        }
+    }
+
+    &__description{
+        width: 286px;
+    }
+
+    &__link{
+        color: var(--color-accent);
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        line-height: 1.4;
+
+        @include hover{
+            opacity: 0.7;
+        }
+    }
+}
