@@ -4,13 +4,17 @@
     border-radius: var(--border-radius-large);
     box-shadow: var(--shadow);
     padding: 40px 35px;
-    --teamCardPadding: 28px;
+    --teamBodyMarginTop: 28px;
     height: 100%;
+
+    @include mobile {
+        padding-inline: 50px;
+    }
 
     &__header {
         display: flex;
         justify-content: start;
-     }
+    }
 
     &__image {
         &:not(:last-child) {
@@ -47,8 +51,12 @@
     }
 
     &__body {
-        padding-top: var(--teamCardPadding);
-        margin-top: var(--teamCardPadding);
+        padding-top: var(--teamBodyMarginTop);
+        margin-top: var(--teamBodyMarginTop);
         border-top: var(--border);
+
+        @include mobile {
+            --teamBodyMarginTop: 20px;
+        }
     }
 }
