@@ -8,6 +8,12 @@
     flex-direction: column;
     row-gap: 48px;
 
+    @include mobile{
+        row-gap:  44px;
+        --testimonialsCardCornerWidth: 32px;
+        --testimonialsCardCornerOffsetLeft: 46px;
+    }
+
     &__body {
 
         position: relative;
@@ -26,6 +32,10 @@
             rotate: 45deg;
             clip-path: polygon(100% 0, 0% 100%, 100% 100%);
             translate: 0 -50%;
+        }
+
+        @include mobile{
+            padding: 30px;
         }
     }
 
