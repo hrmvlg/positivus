@@ -1,6 +1,6 @@
 .banner {
     --bannerImageOffsetY: 20px;
-    padding: var(--bannerImageOffsetY);
+    padding-block: var(--bannerImageOffsetY);
 
     @include tablet {
         --bannerImageOffsetY: 0;

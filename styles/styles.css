@@ -867,7 +867,7 @@ h4, .h4 {
 
 .banner {
   --bannerImageOffsetY: 20px;
-  padding: var(--bannerImageOffsetY);
+  padding-block: var(--bannerImageOffsetY);
 }
 @media (max-width: 1023px) {
   .banner {
