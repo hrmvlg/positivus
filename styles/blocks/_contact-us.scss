@@ -1,0 +1,38 @@
+.contact-us {
+    padding: 60px 100px 80px;
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius-large);
+
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    overflow-x: hidden;
+
+    &::after {
+        --contactUsImageOffsetY: 62px;
+
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        translate: -50% -50%;
+        height: calc(100% - var(--contactUsImageOffsetY) * 2);
+        aspect-ratio: 1;
+        background: url(../../images/contact/contact.svg) center/contain no-repeat;
+    }
+
+    &__form,
+    &__body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form {
+        min-width: 556px;
+        row-gap: 40px;
+    }
+
+    &__body {
+        row-gap: 25px;
+    }
+}
