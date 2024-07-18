@@ -297,6 +297,22 @@ h4, .h4 {
   color: var(--color-dark);
   background-color: transparent;
 }
+.button--accent {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}
+@media (hover: hover) {
+  .button--accent:hover {
+    color: var(--color-accent);
+    background-color: var(--color-dark);
+  }
+}
+@media (hover: none) {
+  .button--accent:active {
+    color: var(--color-accent);
+    background-color: var(--color-dark);
+  }
+}
 
 .radios {
   display: flex;
@@ -349,6 +365,12 @@ h4, .h4 {
 }
 
 .field {
+  --fieldInputHeight: var(--input-height);
+  --fieldInputTextColor: var(--color-dark);
+  --fieldInputBgColor: var(--color-light);
+  --fieldInputBorerColor: var(--color-dark);
+  --fieldInputPlaceholderColor: var(--color-gray-alt);
+  --fieldInputHoverBgColor: var(--color-accent);
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -359,24 +381,36 @@ h4, .h4 {
     row-gap: 10px;
   }
 }
+.field--large-height {
+  --fieldInputHeight: var(--button-height);
+}
+.field--dark-bg {
+  --fieldInputTextColor: var(--color-accent);
+  --fieldInputBgColor: var(--color-dark-alt);
+  --fieldInputPlaceholderColor: var(--color-light);
+  --fieldInputBorerColor: var(--color-light);
+  --fieldInputHoverBgColor: var(--color-dark);
+}
 .field__label {
   font-size: clamp(16px, 1.1111111111vw, 14px);
 }
 .field__input {
   width: 100%;
-  height: var(--input-height);
-  padding-inline: 30px;
-  border: var(--border);
+  height: var(--fieldInputHeight);
+  border: 1px solid var(--fieldInputBorerColor);
   border-radius: var(--border-radius);
+  color: var(--fieldInputTextColor);
+  background-color: var(--fieldInputBgColor);
+  padding-inline: 30px;
 }
 @media (hover: hover) {
   .field__input:hover {
-    background-color: var(--color-accent);
+    background-color: var(--fieldInputHoverBgColor);
   }
 }
 @media (hover: none) {
   .field__input:active {
-    background-color: var(--color-accent);
+    background-color: var(--fieldInputHoverBgColor);
   }
 }
 @media (max-width: 767px) {
@@ -389,10 +423,10 @@ h4, .h4 {
   outline: none;
 }
 .field__input::-moz-placeholder {
-  color: var(--color-gray-alt);
+  color: var(--fieldInputPlaceholderColor);
 }
 .field__input::placeholder {
-  color: var(--color-gray-alt);
+  color: var(--fieldInputPlaceholderColor);
 }
 .field__input--textarea {
   height: 190px;
@@ -1514,4 +1548,183 @@ h4, .h4 {
     padding: 40px 52px 36px;
     border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
   }
+}
+
+.soc1als-list {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.soc1als-link {
+  width: 30px;
+  aspect-ratio: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+.soc1als-link svg {
+  width: 50%;
+  height: 50%;
+}
+@media (hover: hover) {
+  .soc1als-link:hover {
+    background-color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .soc1als-link:active {
+    background-color: var(--color-accent);
+  }
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  align-items: center;
+  padding: 58px 40px;
+  background-color: var(--color-dark-alt);
+  border-radius: var(--border-radius);
+}
+
+.footer__inner {
+  padding: 55px 60px 50px;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+}
+.footer__navigation {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__navigation:not(:last-child) {
+  margin-bottom: 66px;
+}
+.footer__menu-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.footer__menu-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  line-height: 30px;
+}
+@media (hover: hover) {
+  .footer__menu-link:hover {
+    color: var(--color-accent);
+  }
+  .footer__menu-link:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  .footer__menu-link:active {
+    color: var(--color-accent);
+  }
+  .footer__menu-link:active::after {
+    width: 100%;
+  }
+}
+.footer__menu-link::after {
+  content: "";
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  translate: -50%;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition-duration: inherit;
+}
+.footer__body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+.footer__body:not(:last-child) {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid currentColor;
+}
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  row-gap: 27px;
+}
+.footer__contacts-title {
+  color: var(--color-dark);
+}
+.footer__contacts-body {
+  font-style: normal;
+}
+.footer__contacts-body p {
+  --paragraphMarginBottom: 20px ;
+}
+@media (hover: hover) {
+  .footer__contacts-body a:hover {
+    color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .footer__contacts-body a:active {
+    color: var(--color-accent);
+  }
+}
+.footer__extra {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer__privacy-policy-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  line-height: 30px;
+}
+@media (hover: hover) {
+  .footer__privacy-policy-link:hover {
+    color: var(--color-accent);
+  }
+  .footer__privacy-policy-link:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  .footer__privacy-policy-link:active {
+    color: var(--color-accent);
+  }
+  .footer__privacy-policy-link:active::after {
+    width: 100%;
+  }
+}
+.footer__privacy-policy-link::after {
+  content: "";
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  translate: -50%;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition-duration: inherit;
 }/*# sourceMappingURL=styles.css.map */

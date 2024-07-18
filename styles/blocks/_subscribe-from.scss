@@ -1,0 +1,9 @@
+.subscribe-form {
+    @include flex-row;
+
+    column-gap: 20px;
+    align-items: center;
+    padding: 58px 40px;
+    background-color: var(--color-dark-alt);
+    border-radius: var(--border-radius);
+}

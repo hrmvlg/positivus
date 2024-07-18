@@ -1,0 +1,130 @@
+.footer {
+    &__inner {
+        padding: 55px 60px 50px;
+        color: var(--color-light);
+        background-color: var(--color-dark);
+        border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+    }
+
+    &__navigation {
+        @include flex-row;
+        column-gap: 30px;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 66px;
+        }
+    }
+
+    &__menu {
+        &-list {
+            @include flex-row;
+            
+            align-items: center;
+            column-gap: 40px;
+        }
+
+        &-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            line-height: 30px;
+
+            @include hover {
+                color: var(--color-accent);
+
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 77%;
+                left: 50%;
+                translate: -50%;
+                width: 0;
+                height: 1px;
+                background-color: currentColor;
+                transition-duration: inherit;
+            }
+        }
+    }
+
+    &__body {
+        @include flex-row;
+
+        justify-content: space-between;
+        column-gap: 50px;
+
+        &:not(:last-child) {
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid currentColor;
+        }
+    }
+
+    &__contacts {
+        @include flex-col;
+
+        justify-content: space-between;
+        align-items: start;
+        row-gap: 27px;
+
+        &-title {
+            color: var(--color-dark);
+        }
+
+        &-body {
+
+            font-style: normal;
+
+            p {
+                --paragraphMarginBottom: 20px
+            }
+
+            a {
+                @include hover {
+                    color: var(--color-accent);
+                }
+            }
+        }
+
+    }
+
+    &__extra {
+        @include flex-row;
+        column-gap: 40px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__privacy-policy-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        line-height: 30px;
+
+        @include hover {
+            color: var(--color-accent);
+
+            &::after {
+                width: 100%;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 77%;
+            left: 50%;
+            translate: -50%;
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition-duration: inherit;
+        }
+    }
+}

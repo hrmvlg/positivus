@@ -18,5 +18,15 @@
         background-color: transparent;
     }
 
+    &--accent{
+        background-color: var(--color-accent);
+        color: var(--color-dark);
+
+        @include hover{
+            color: var(--color-accent);
+            background-color: var(--color-dark) ;
+        }
+    }
+
     font-size: 20px;
 }

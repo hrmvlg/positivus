@@ -54,3 +54,13 @@
     clip: rect(0 0 0 0) !important;
     overflow: hidden !important;
 }
+
+@mixin flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-col{
+    display: flex;
+    flex-direction: column;
+}
