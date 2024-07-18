@@ -6,4 +6,14 @@
     padding: 58px 40px;
     background-color: var(--color-dark-alt);
     border-radius: var(--border-radius);
+
+    @include desktop{
+        @include flex-col;
+        align-items: stretch;
+        row-gap: 22px;
+        padding: 30px;
+
+        width: 100%;
+        max-width: 450px;
+    }
 }

@@ -1,9 +1,27 @@
 .footer {
+
+    @include mobile {
+        padding-inline: 0;
+    }
+
     &__inner {
         padding: 55px 60px 50px;
         color: var(--color-light);
         background-color: var(--color-dark);
-        border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+
+        @include mobile-above {
+            border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+        }
+
+        @include mobile {
+            padding: 50px var(--container-padding-x) 30px;
+        }
+
+        @include tablet{
+            @include flex-col;
+            align-items: center;
+            row-gap: 37px;
+        }
     }
 
     &__navigation {
@@ -15,14 +33,31 @@
         &:not(:last-child) {
             margin-bottom: 66px;
         }
+
+        @include tablet {
+            @include flex-col;
+            align-items: center;
+            row-gap: 37px;
+
+            display: contents;
+        }
     }
 
     &__menu {
         &-list {
             @include flex-row;
-            
+
             align-items: center;
             column-gap: 40px;
+
+            @include desktop {
+                column-gap: 20px;
+            }
+
+            @include mobile {
+                @include flex-col;
+                row-gap: 15px;
+            }
         }
 
         &-link {
@@ -53,16 +88,34 @@
         }
     }
 
+    &__soc1als {
+        @include tablet {
+            order: 1;
+        }
+    }
+
     &__body {
         @include flex-row;
 
         justify-content: space-between;
         column-gap: 50px;
 
-        &:not(:last-child) {
-            margin-bottom: 50px;
-            padding-bottom: 50px;
-            border-bottom: 1px solid currentColor;
+        @include tablet-above {
+            &:not(:last-child) {
+                margin-bottom: 50px;
+                padding-bottom: 50px;
+                border-bottom: 1px solid currentColor;
+            }
+        }
+
+        @include mobile {
+            @include flex-col;
+            align-items: center;
+            row-gap: inherit;
+        }
+
+        @include mobile-s {
+            width: 100%;
         }
     }
 
@@ -72,6 +125,12 @@
         justify-content: space-between;
         align-items: start;
         row-gap: 27px;
+
+        @include mobile {
+            row-gap: 37px;
+            align-items: center;
+            text-align: center;
+        }
 
         &-title {
             color: var(--color-dark);
@@ -90,8 +149,13 @@
                     color: var(--color-accent);
                 }
             }
-        }
 
+            @include mobile {
+                p {
+                    --paragraphMarginBottom: 15px
+                }
+            }
+        }
     }
 
     &__extra {
@@ -99,6 +163,15 @@
         column-gap: 40px;
         justify-content: flex-start;
         align-items: center;
+
+        @include tablet {
+            @include flex-col;
+            row-gap: 15px;
+            order: 2;
+            width: 100%;
+            padding-top: 37px;
+            border-top: 1px solid currentColor;
+        }
     }
 
     &__privacy-policy-link {
