@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  build: {
-    outDir: 'build', 
-    emptyOutDir: true,
-  },
+    base: '/positivus/',
+    build: {
+        outDir: 'build',
+        emptyOutDir: true,
+    },
 });
