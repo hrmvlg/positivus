@@ -1,0 +1,20 @@
+{
+  "name": "positivus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Olga Khromova",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "vite": "^5.4.11"
+  },
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+}
+
+}
